@@ -16,16 +16,22 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '21'
 
     - name: Install dependencies
       run: npm install
 
-    - name: Copy coverage report to dist
-      run: cp -r coverage/lcov-report/* dist/
+    - name: Build lint
+      run: npm run lint
+
+    - name: runt test
+      run: npm run test:coverage
 
     - name: Build project
       run: npm run build
+
+    - name: Copy coverage report to dist
+      run: cp -r coverage/lcov-report/* dist/
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
