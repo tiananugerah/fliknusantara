@@ -3,6 +3,7 @@ import MovieCard, { type Movie } from '../molecules/MovieCard';
 import Loader from '../atoms/Loader';
 import '@/styles/components/MovieList.css';
 import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
+import { Link } from 'react-router-dom';
 
 interface MovieListProps {
   movies: Movie[];
@@ -46,9 +47,11 @@ const MovieList: React.FC<MovieListProps> = ({ movies, onLoadMore, loading, titl
             </p>
           </div>
           <div className="movie-list__hero-buttons">
-            <button className="movie-list__hero-button movie-list__hero-button--secondary">
-              Info Selengkapnya
-            </button>
+            <Link to={`/movie/${heroMovie.id}`} className="movie-card">
+              <button className="movie-list__hero-button movie-list__hero-button--secondary">
+                Info Selengkapnya
+              </button>
+            </Link>
           </div>
         </div>
       </div>

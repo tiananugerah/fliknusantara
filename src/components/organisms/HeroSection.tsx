@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import '@/styles/components/HeroSection.css';
 import type { Movie } from '../molecules/MovieCard';
+import { Link } from 'react-router-dom';
 
 interface HeroSectionProps {
   movies: Movie[];
@@ -74,13 +75,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ movies }) => {
                   <p className="hero-section__description">{movie.overview}</p>
                 </div>
                 <div className="hero-section__buttons">
-                  <button
-                    className="hero-section__button hero-section__button--secondary"
-                    aria-label="Lihat informasi lebih lanjut"
-                    onClick={() => window.location.href = `/movie/${movie.id}`}
-                  >
-                    Info Selengkapnya
-                  </button>
+                  <Link to={`/movie/${movie.id}`} className="movie-card">
+                    <button
+                      className="hero-section__button hero-section__button--secondary"
+                      aria-label="Lihat informasi lebih lanjut"
+                    >
+                      Info Selengkapnya
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
