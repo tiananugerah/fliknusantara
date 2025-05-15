@@ -18,6 +18,10 @@ jobs:
       with:
         node-version: '21'
 
+    - name: Create .env file
+      run: |
+        echo "VITE_TMDB_API_KEY=${{ secrets.MY_SECRET_TOKEN }}" > .env
+
     - name: Install dependencies
       run: npm install
 

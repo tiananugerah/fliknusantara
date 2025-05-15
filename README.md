@@ -50,3 +50,6 @@ Anda dapat mengakses halaman proyek ini melalui GitHub Pages di [Flik Nusantara]
 ## Badge
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
+
+## Konfigurasi .env
+Untuk menggunakan aplikasi ini, Anda perlu mengatur file `.env` dengan kunci API TMDB. Contoh file `.env` dapat ditemukan di `.env.example`. Anda harus mendapatkan kunci API dari [TMDB](https://www.themoviedb.org/documentation/api) dan memasukkannya ke dalam file `.env` sebagai `VITE_TMDB_API_KEY`.
