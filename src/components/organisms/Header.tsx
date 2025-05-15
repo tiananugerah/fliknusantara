@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
 
     const timeout = setTimeout(() => {
       onSearch(query);
-    }, 500);
+    }, 1000); // Mengurangi waktu delay menjadi 300ms
 
     setSearchTimeout(timeout);
   };

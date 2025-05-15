@@ -12,7 +12,7 @@
 .header__container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 1rem 0;
 }
 
 .header__content {
@@ -136,4 +136,28 @@
   .header__category-button--inactive:hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
+}
+
+@media (max-width: 480px) {
+  .header__logo {
+    font-size: 1.5rem;
+  }
+
+  .header__search-input {
+    padding: 0.5rem 1rem;
+  }
+
+  .header__category-button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.header__category-button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.header__category-button:hover {
+  transform: scale(1.05);
+  background-color: red;
+  background-color: rgba(255, 255, 255, 0.2);
 }
