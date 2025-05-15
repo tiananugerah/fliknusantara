@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-
+      
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -32,7 +32,9 @@ jobs:
       run: npm run build
 
     - name: Copy coverage report to dist
-      run: cp -r coverage/lcov-report/* dist/
+      run: |
+        mkdir -p dist/coverage
+        cp -r coverage/lcov-report/* dist/coverage
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
