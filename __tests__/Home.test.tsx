@@ -51,7 +51,6 @@ describe('Home', () => {
   });
 
   it('menampilkan loading state saat mengambil data', async () => {
-    const { rerender } = renderHome();
     await waitFor(() => {
       expect(screen.getByTestId('loader')).toBeInTheDocument();
       expect(getMovies).toHaveBeenCalled();

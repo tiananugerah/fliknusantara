@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747325256493" clover="3.2.0">
-  <project timestamp="1747325256493" name="All files">
+<coverage generated="1747329323734" clover="3.2.0">
+  <project timestamp="1747329323735" name="All files">
     <metrics statements="243" coveredstatements="234" conditionals="96" coveredconditionals="82" methods="68" coveredmethods="63" elements="407" coveredelements="379" complexity="0" loc="243" ncloc="243" packages="6" files="13" classes="13"/>
     <package name="src">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -21,32 +21,32 @@
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
-        <line num="5" count="44" type="stmt"/>
-        <line num="7" count="44" type="stmt"/>
-        <line num="8" count="13" type="stmt"/>
+        <line num="5" count="41" type="stmt"/>
+        <line num="7" count="41" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
         <line num="9" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="10" count="2" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="16" count="13" type="stmt"/>
-        <line num="18" count="13" type="stmt"/>
-        <line num="19" count="13" type="stmt"/>
-        <line num="23" count="44" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="23" count="41" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
-        <line num="30" count="44" type="stmt"/>
+        <line num="30" count="41" type="stmt"/>
         <line num="55" count="2" type="stmt"/>
       </file>
       <file name="Button.tsx" path="/Users/tian/Desktop/fliknusantara/src/components/atoms/Button.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
         <line num="2" count="8" type="stmt"/>
         <line num="14" count="8" type="stmt"/>
-        <line num="23" count="389" type="stmt"/>
+        <line num="23" count="367" type="stmt"/>
         <line num="37" count="8" type="stmt"/>
       </file>
       <file name="Loader.tsx" path="/Users/tian/Desktop/fliknusantara/src/components/atoms/Loader.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="3" type="stmt"/>
         <line num="8" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="29" type="stmt"/>
+        <line num="9" count="27" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
       </file>
     </package>
@@ -58,9 +58,9 @@
         <line num="3" count="5" type="stmt"/>
         <line num="4" count="5" type="stmt"/>
         <line num="19" count="5" type="stmt"/>
-        <line num="20" count="111" type="stmt"/>
-        <line num="21" count="111" type="stmt"/>
-        <line num="23" count="111" type="stmt"/>
+        <line num="20" count="107" type="stmt"/>
+        <line num="21" count="107" type="stmt"/>
+        <line num="23" count="107" type="stmt"/>
         <line num="48" count="5" type="stmt"/>
       </file>
     </package>
@@ -73,21 +73,21 @@
         <line num="3" count="2" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
         <line num="21" count="2" type="stmt"/>
-        <line num="27" count="49" type="stmt"/>
-        <line num="28" count="49" type="stmt"/>
-        <line num="30" count="49" type="stmt"/>
-        <line num="31" count="16" type="stmt"/>
+        <line num="27" count="46" type="stmt"/>
+        <line num="28" count="46" type="stmt"/>
+        <line num="30" count="46" type="stmt"/>
+        <line num="31" count="15" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="35" count="16" type="stmt"/>
-        <line num="36" count="16" type="stmt"/>
-        <line num="39" count="49" type="stmt"/>
+        <line num="35" count="15" type="stmt"/>
+        <line num="36" count="15" type="stmt"/>
+        <line num="39" count="46" type="stmt"/>
         <line num="40" count="4" type="stmt"/>
         <line num="41" count="4" type="cond" truecount="0" falsecount="1"/>
         <line num="43" count="4" type="stmt"/>
         <line num="44" count="4" type="stmt"/>
         <line num="47" count="4" type="stmt"/>
-        <line num="50" count="49" type="stmt"/>
-        <line num="74" count="180" type="stmt"/>
+        <line num="50" count="46" type="stmt"/>
+        <line num="74" count="168" type="stmt"/>
         <line num="77" count="3" type="stmt"/>
         <line num="91" count="2" type="stmt"/>
       </file>
@@ -97,32 +97,32 @@
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
-        <line num="11" count="56" type="stmt"/>
-        <line num="12" count="56" type="stmt"/>
-        <line num="14" count="56" type="stmt"/>
+        <line num="11" count="53" type="stmt"/>
+        <line num="12" count="53" type="stmt"/>
+        <line num="14" count="53" type="stmt"/>
         <line num="15" count="4" type="stmt"/>
         <line num="16" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="20" count="56" type="stmt"/>
+        <line num="20" count="53" type="stmt"/>
         <line num="21" count="3" type="stmt"/>
         <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="27" count="56" type="stmt"/>
-        <line num="28" count="35" type="stmt"/>
+        <line num="27" count="53" type="stmt"/>
+        <line num="28" count="33" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
-        <line num="32" count="35" type="stmt"/>
-        <line num="36" count="56" type="stmt"/>
-        <line num="37" count="35" type="stmt"/>
+        <line num="32" count="33" type="stmt"/>
+        <line num="36" count="53" type="stmt"/>
+        <line num="37" count="33" type="stmt"/>
         <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="41" count="1" type="stmt"/>
-        <line num="45" count="35" type="stmt"/>
-        <line num="46" count="35" type="stmt"/>
-        <line num="49" count="56" type="cond" truecount="1" falsecount="0"/>
-        <line num="50" count="25" type="stmt"/>
-        <line num="53" count="31" type="stmt"/>
-        <line num="57" count="62" type="stmt"/>
-        <line num="58" count="62" type="stmt"/>
-        <line num="112" count="62" type="stmt"/>
+        <line num="45" count="33" type="stmt"/>
+        <line num="46" count="33" type="stmt"/>
+        <line num="49" count="53" type="cond" truecount="1" falsecount="0"/>
+        <line num="50" count="23" type="stmt"/>
+        <line num="53" count="30" type="stmt"/>
+        <line num="57" count="60" type="stmt"/>
+        <line num="58" count="60" type="stmt"/>
+        <line num="112" count="60" type="stmt"/>
         <line num="115" count="1" type="stmt"/>
         <line num="125" count="2" type="stmt"/>
       </file>
@@ -134,13 +134,13 @@
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
         <line num="17" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="18" count="80" type="stmt"/>
-        <line num="24" count="80" type="cond" truecount="4" falsecount="0"/>
+        <line num="18" count="74" type="stmt"/>
+        <line num="24" count="74" type="cond" truecount="4" falsecount="0"/>
         <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="61" count="79" type="stmt"/>
-        <line num="68" count="40" type="stmt"/>
+        <line num="61" count="73" type="stmt"/>
+        <line num="68" count="38" type="stmt"/>
         <line num="80" count="2" type="stmt"/>
       </file>
       <file name="TopCarousel.tsx" path="/Users/tian/Desktop/fliknusantara/src/components/organisms/TopCarousel.tsx">
@@ -167,15 +167,15 @@
         <line num="3" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="13" count="43" type="stmt"/>
-        <line num="15" count="43" type="stmt"/>
+        <line num="13" count="40" type="stmt"/>
+        <line num="15" count="40" type="stmt"/>
         <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="17" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
-        <line num="25" count="43" type="stmt"/>
+        <line num="25" count="40" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
-        <line num="57" count="44" type="stmt"/>
+        <line num="57" count="42" type="stmt"/>
         <line num="69" count="2" type="stmt"/>
       </file>
     </package>
@@ -185,20 +185,20 @@
         <metrics statements="16" coveredstatements="16" conditionals="7" coveredconditionals="7" methods="4" coveredmethods="4"/>
         <line num="1" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
-        <line num="16" count="80" type="stmt"/>
-        <line num="17" count="80" type="stmt"/>
-        <line num="19" count="80" type="stmt"/>
-        <line num="20" count="80" type="stmt"/>
-        <line num="26" count="80" type="stmt"/>
+        <line num="16" count="74" type="stmt"/>
+        <line num="17" count="74" type="stmt"/>
+        <line num="19" count="74" type="stmt"/>
+        <line num="20" count="74" type="stmt"/>
+        <line num="26" count="74" type="stmt"/>
         <line num="27" count="3" type="stmt"/>
         <line num="28" count="3" type="cond" truecount="3" falsecount="0"/>
         <line num="29" count="2" type="stmt"/>
-        <line num="33" count="80" type="cond" truecount="1" falsecount="0"/>
-        <line num="34" count="75" type="stmt"/>
-        <line num="37" count="80" type="stmt"/>
-        <line num="38" count="80" type="cond" truecount="1" falsecount="0"/>
-        <line num="39" count="80" type="stmt"/>
-        <line num="44" count="80" type="stmt"/>
+        <line num="33" count="74" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="69" type="stmt"/>
+        <line num="37" count="74" type="stmt"/>
+        <line num="38" count="74" type="cond" truecount="1" falsecount="0"/>
+        <line num="39" count="74" type="stmt"/>
+        <line num="44" count="74" type="stmt"/>
       </file>
     </package>
     <package name="src.pages">
@@ -215,45 +215,45 @@
         <line num="9" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="21" count="39" type="stmt"/>
-        <line num="22" count="39" type="stmt"/>
-        <line num="23" count="39" type="stmt"/>
-        <line num="24" count="39" type="stmt"/>
-        <line num="25" count="39" type="stmt"/>
-        <line num="26" count="39" type="stmt"/>
-        <line num="27" count="39" type="stmt"/>
-        <line num="28" count="39" type="stmt"/>
-        <line num="29" count="39" type="stmt"/>
-        <line num="31" count="39" type="cond" truecount="0" falsecount="1"/>
-        <line num="32" count="15" type="stmt"/>
-        <line num="33" count="15" type="stmt"/>
-        <line num="34" count="15" type="cond" truecount="1" falsecount="1"/>
-        <line num="35" count="15" type="cond" truecount="1" falsecount="1"/>
-        <line num="39" count="14" type="stmt"/>
-        <line num="41" count="14" type="cond" truecount="0" falsecount="1"/>
+        <line num="21" count="36" type="stmt"/>
+        <line num="22" count="36" type="stmt"/>
+        <line num="23" count="36" type="stmt"/>
+        <line num="24" count="36" type="stmt"/>
+        <line num="25" count="36" type="stmt"/>
+        <line num="26" count="36" type="stmt"/>
+        <line num="27" count="36" type="stmt"/>
+        <line num="28" count="36" type="stmt"/>
+        <line num="29" count="36" type="stmt"/>
+        <line num="31" count="36" type="cond" truecount="0" falsecount="1"/>
+        <line num="32" count="14" type="stmt"/>
+        <line num="33" count="14" type="stmt"/>
+        <line num="34" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="35" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="39" count="13" type="stmt"/>
+        <line num="41" count="13" type="cond" truecount="0" falsecount="1"/>
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="49" count="14" type="stmt"/>
-        <line num="50" count="14" type="cond" truecount="1" falsecount="1"/>
-        <line num="52" count="14" type="cond" truecount="0" falsecount="1"/>
+        <line num="49" count="13" type="stmt"/>
+        <line num="50" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="52" count="13" type="cond" truecount="0" falsecount="1"/>
         <line num="54" count="1" type="stmt"/>
-        <line num="56" count="15" type="stmt"/>
-        <line num="60" count="39" type="stmt"/>
-        <line num="61" count="12" type="stmt"/>
-        <line num="62" count="12" type="stmt"/>
-        <line num="63" count="12" type="stmt"/>
-        <line num="64" count="11" type="stmt"/>
+        <line num="56" count="14" type="stmt"/>
+        <line num="60" count="36" type="stmt"/>
+        <line num="61" count="11" type="stmt"/>
+        <line num="62" count="11" type="stmt"/>
+        <line num="63" count="11" type="stmt"/>
+        <line num="64" count="10" type="stmt"/>
         <line num="66" count="1" type="stmt"/>
-        <line num="68" count="12" type="stmt"/>
-        <line num="72" count="39" type="stmt"/>
-        <line num="73" count="12" type="stmt"/>
-        <line num="74" count="12" type="stmt"/>
-        <line num="75" count="12" type="stmt"/>
-        <line num="76" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="77" count="12" type="stmt"/>
-        <line num="81" count="39" type="stmt"/>
+        <line num="68" count="11" type="stmt"/>
+        <line num="72" count="36" type="stmt"/>
+        <line num="73" count="11" type="stmt"/>
+        <line num="74" count="11" type="stmt"/>
+        <line num="75" count="11" type="stmt"/>
+        <line num="76" count="11" type="cond" truecount="1" falsecount="0"/>
+        <line num="77" count="11" type="stmt"/>
+        <line num="81" count="36" type="stmt"/>
         <line num="82" count="3" type="stmt"/>
         <line num="83" count="3" type="stmt"/>
         <line num="84" count="3" type="stmt"/>
@@ -262,7 +262,7 @@
         <line num="88" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="89" count="3" type="stmt"/>
         <line num="91" count="0" type="stmt"/>
-        <line num="95" count="39" type="stmt"/>
+        <line num="95" count="36" type="stmt"/>
         <line num="118" count="0" type="stmt"/>
         <line num="126" count="0" type="stmt"/>
         <line num="138" count="0" type="stmt"/>

@@ -25,5 +25,4 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "__tests__/MovieCard.test.tsx"]
-}
+  "include": ["src"]}
