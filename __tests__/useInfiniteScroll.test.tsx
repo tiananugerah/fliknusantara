@@ -1,5 +1,4 @@
 import { renderHook } from '@testing-library/react';
-import * as React from 'react';
 import { useInfiniteScroll } from '../src/hooks/useInfiniteScroll';
 
 describe('useInfiniteScroll', () => {
@@ -8,90 +7,95 @@ describe('useInfiniteScroll', () => {
   const mockObserve = jest.fn();
 
   beforeEach(() => {
-    mockIntersectionObserver.mockImplementation((callback) => ({
+    mockIntersectionObserver.mockReset();
+    mockDisconnect.mockReset();
+    mockObserve.mockReset();
+
+    mockIntersectionObserver.mockImplementation(() => ({
       observe: mockObserve,
       disconnect: mockDisconnect,
-      unobserve: jest.fn(),
-      takeRecords: jest.fn(),
-      root: null,
-      rootMargin: '',
-      thresholds: [],
     }));
 
     window.IntersectionObserver = mockIntersectionObserver;
   });
 
-  afterEach(() => {
-    jest.clearAllMocks();
+  it('membuat observer dengan konfigurasi yang benar', () => {
+    const onLoadMore = jest.fn();
+    renderHook(() =>
+      useInfiniteScroll({
+        onLoadMore,
+        loading: false,
+        rootMargin: '20px',
+        threshold: 1.0,
+      })
+    );
+
+    expect(mockIntersectionObserver).toHaveBeenCalledWith(
+      expect.any(Function),
+      {
+        root: null,
+        rootMargin: '20px',
+        threshold: 1.0,
+      }
+    );
   });
 
   it('memanggil onLoadMore ketika elemen terlihat dan tidak sedang loading', () => {
     const onLoadMore = jest.fn();
-    const { result } = renderHook(() =>
-      useInfiniteScroll({ onLoadMore, loading: false })
+    renderHook(() =>
+      useInfiniteScroll({
+        onLoadMore,
+        loading: false,
+      })
     );
 
-    expect(mockIntersectionObserver).toHaveBeenCalled();
-
-    const [callback] = mockIntersectionObserver.mock.calls[0];
-    callback([{ isIntersecting: true }]);
+    const [observerCallback] = mockIntersectionObserver.mock.calls[0];
+    observerCallback([{ isIntersecting: true }]);
 
     expect(onLoadMore).toHaveBeenCalled();
   });
 
-  it('tidak memanggil onLoadMore ketika sedang loading', () => {
+  it('tidak memanggil onLoadMore ketika loading', () => {
     const onLoadMore = jest.fn();
-    renderHook(() => useInfiniteScroll({ onLoadMore, loading: true }));
+    renderHook(() =>
+      useInfiniteScroll({
+        onLoadMore,
+        loading: true,
+      })
+    );
 
-    const [callback] = mockIntersectionObserver.mock.calls[0];
-    callback([{ isIntersecting: true }]);
+    const [observerCallback] = mockIntersectionObserver.mock.calls[0];
+    observerCallback([{ isIntersecting: true }]);
 
     expect(onLoadMore).not.toHaveBeenCalled();
   });
 
-  it('membersihkan observer ketika komponen di-unmount', () => {
+  it('membersihkan observer saat unmount', () => {
     const { unmount } = renderHook(() =>
-      useInfiniteScroll({ onLoadMore: jest.fn(), loading: false })
-    );
-
-    unmount();
-
-    expect(mockDisconnect).toHaveBeenCalled();
-  });
-
-  it('menggunakan rootMargin dan threshold yang diberikan', () => {
-    const customRootMargin = '10px';
-    const customThreshold = 0.5;
-
-    renderHook(() =>
       useInfiniteScroll({
         onLoadMore: jest.fn(),
         loading: false,
-        rootMargin: customRootMargin,
-        threshold: customThreshold,
       })
     );
 
-    const [, options] = mockIntersectionObserver.mock.calls[0];
-
-    expect(options.rootMargin).toBe(customRootMargin);
-    expect(options.threshold).toBe(customThreshold);
+    unmount();
+    expect(mockDisconnect).toHaveBeenCalled();
   });
 
-  it('mengobservasi loadMoreRef ketika ref tersedia', () => {
-    const mockElement = document.createElement('div');
-    let refCallback: (element: HTMLDivElement | null) => void = () => {};
-
-    jest.spyOn(React, 'useRef').mockImplementation(() => ({
-      current: mockElement,
-      set current(value: any) {
-        refCallback(value);
-      }
-    }));
-
-    renderHook(() =>
-      useInfiniteScroll({ onLoadMore: jest.fn(), loading: false })
+  it('mengamati elemen ketika ref tersedia', () => {
+    const { result } = renderHook(() =>
+      useInfiniteScroll({
+        onLoadMore: jest.fn(),
+        loading: false,
+      })
     );
+
+    const mockElement = document.createElement('div');
+    result.current.loadMoreRef.current = mockElement;
+
+    // Trigger useEffect
+    const [observerCallback] = mockIntersectionObserver.mock.calls[0];
+    observerCallback([{ isIntersecting: true }]);
 
     expect(mockObserve).toHaveBeenCalledWith(mockElement);
   });

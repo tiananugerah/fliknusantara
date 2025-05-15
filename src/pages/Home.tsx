@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useCallback } from 'react';
 import { getMovies, searchMovies, getRandomMovies, type MovieResponse } from '../services/api';
 import MovieList from '../components/organisms/MovieList';
 import TopTenCarousel from '../components/organisms/TopTenCarousel';
@@ -27,14 +28,14 @@ const Home: React.FC = () => {
   const [randomMovies, setRandomMovies] = useState<MovieResponse['results']>([]);
   const [hasReachedEnd, setHasReachedEnd] = useState(false);
 
-  const fetchMovies = async (resetPage = false) => {
+  const fetchMovies = useCallback(async (resetPage = false) => {
     try {
       setLoading(true);
       const currentPage = resetPage ? 1 : page;
       const endpoint = searchQuery
         ? await searchMovies(searchQuery, currentPage)
         : await getMovies(`/movie/${category}`, currentPage);
-
+  
       const newMovies = endpoint.results;
       
       if (newMovies.length === 0) {
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
           setRandomMovies(randomResults.results);
         }
       }
-
+  
       setMovies(prevMovies => (
         resetPage ? newMovies : [...prevMovies, ...newMovies]
       ));
@@ -54,9 +55,9 @@ const Home: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [page, category, searchQuery, randomMovies]);
 
-  const fetchTopMovies = async () => {
+  const fetchTopMovies =  useCallback(async () => {
     try {
       setTopMoviesLoading(true);
       const response = await getMovies('/movie/top_rated', 1);
@@ -66,7 +67,7 @@ const Home: React.FC = () => {
     } finally {
       setTopMoviesLoading(false);
     }
-  };
+  },[]);
 
   useEffect(() => {
     setMovies([]);

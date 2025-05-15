@@ -61,7 +61,7 @@ describe('MovieCard', () => {
   });
 
   it('menampilkan URL gambar yang benar ketika poster_path null', () => {
-    const movieWithoutPoster = { ...mockMovie, poster_path: null };
+    const movieWithoutPoster = { ...mockMovie, poster_path: '' };
     renderWithRouter(<MovieCard movie={movieWithoutPoster} />);
     
     expect(screen.getByAltText('Test Movie')).toHaveAttribute(

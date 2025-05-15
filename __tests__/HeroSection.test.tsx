@@ -34,7 +34,6 @@ describe('HeroSection Component', () => {
 
   it('merender film pertama sebagai slide aktif', () => {
     render(<HeroSection movies={mockMovies} />);
-    
     expect(screen.getByText('Film 1')).toBeInTheDocument();
     expect(screen.getByText('Deskripsi film 1')).toBeInTheDocument();
     expect(screen.getByAltText('Film 1')).toHaveAttribute(
@@ -45,26 +44,21 @@ describe('HeroSection Component', () => {
 
   it('mengganti slide secara otomatis setelah interval waktu', () => {
     render(<HeroSection movies={mockMovies} />);
-    
     act(() => {
       jest.advanceTimersByTime(5000); // Menunggu 5 detik
     });
-
     expect(screen.getByText('Film 2')).toBeInTheDocument();
   });
 
   it('mengganti slide ketika indikator diklik', () => {
     render(<HeroSection movies={mockMovies} />);
-    
     const indicators = screen.getAllByRole('button');
     fireEvent.click(indicators[1]); // Klik indikator kedua
-    
     expect(screen.getByText('Film 2')).toBeInTheDocument();
   });
 
   it('menampilkan tombol info selengkapnya', () => {
     render(<HeroSection movies={mockMovies} />);
-    
     const buttons = screen.getAllByText('Info Selengkapnya');
     expect(buttons.length).toBeGreaterThan(0);
   });
@@ -73,53 +67,60 @@ describe('HeroSection Component', () => {
     render(<HeroSection movies={[]} />);
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
   });
-  beforeEach(() => {
-    jest.useFakeTimers();
-  });
 
-  afterEach(() => {
-    jest.useRealTimers();
-  });
-
-  it('merender film pertama sebagai slide aktif', () => {
+  it('menampilkan slide berikutnya saat tombol next diklik', () => {
     render(<HeroSection movies={mockMovies} />);
-    
-    expect(screen.getByText('Film 1')).toBeInTheDocument();
-    expect(screen.getByText('Deskripsi film 1')).toBeInTheDocument();
-    expect(screen.getByAltText('Film 1')).toHaveAttribute(
-      'src',
-      expect.stringContaining('/path/to/backdrop1.jpg')
-    );
+    const nextButton = screen.getByLabelText('Slide berikutnya');
+    fireEvent.click(nextButton);
+    expect(screen.getByText('Film Test 2')).toBeInTheDocument();
+    expect(screen.getByText('Deskripsi film test 2')).toBeInTheDocument();
   });
 
-  it('mengganti slide secara otomatis setelah interval waktu', () => {
+  it('menampilkan slide sebelumnya saat tombol previous diklik', () => {
     render(<HeroSection movies={mockMovies} />);
-    
+    const prevButton = screen.getByLabelText('Slide sebelumnya');
+    fireEvent.click(prevButton);
+    expect(screen.getByText('Film Test 2')).toBeInTheDocument();
+    expect(screen.getByText('Deskripsi film test 2')).toBeInTheDocument();
+  });
+
+  it('menavigasi slide menggunakan keyboard', () => {
+    render(<HeroSection movies={mockMovies} />);
+    fireEvent.keyDown(window, { key: 'ArrowRight' });
+    expect(screen.getByText('Film Test 2')).toBeInTheDocument();
+    fireEvent.keyDown(window, { key: 'ArrowLeft' });
+    expect(screen.getByText('Film Test 1')).toBeInTheDocument();
+  });
+
+  it('mengubah slide secara otomatis setelah interval waktu', () => {
+    render(<HeroSection movies={mockMovies} />);
+    expect(screen.getByText('Film Test 1')).toBeInTheDocument();
     act(() => {
-      jest.advanceTimersByTime(5000); // Menunggu 5 detik
+      jest.advanceTimersByTime(5000);
     });
-
-    expect(screen.getByText('Film 2')).toBeInTheDocument();
+    expect(screen.getByText('Film Test 2')).toBeInTheDocument();
   });
 
-  it('mengganti slide ketika indikator diklik', () => {
+  it('menampilkan indikator dot untuk setiap slide', () => {
     render(<HeroSection movies={mockMovies} />);
-    
-    const indicators = screen.getAllByRole('button');
-    fireEvent.click(indicators[1]); // Klik indikator kedua
-    
-    expect(screen.getByText('Film 2')).toBeInTheDocument();
+    const indicators = screen.getAllByRole('button', { name: /Pergi ke slide/ });
+    expect(indicators).toHaveLength(mockMovies.length);
+    fireEvent.click(indicators[1]);
+    expect(screen.getByText('Film Test 2')).toBeInTheDocument();
   });
 
-  it('menampilkan tombol info selengkapnya', () => {
+  it('menavigasi ke halaman detail film saat tombol info diklik', () => {
+    const mockLocation = { href: '' };
+    delete window.location;
+    window.location = mockLocation;
     render(<HeroSection movies={mockMovies} />);
-    
-    const buttons = screen.getAllByText('Info Selengkapnya');
-    expect(buttons.length).toBeGreaterThan(0);
+    const infoButton = screen.getByText('Info Selengkapnya');
+    fireEvent.click(infoButton);
+    expect(window.location.href).toBe('/movie/1');
   });
 
-  it('menangani kasus ketika tidak ada film', () => {
-    render(<HeroSection movies={[]} />);
-    expect(screen.queryByRole('img')).not.toBeInTheDocument();
+  it('mengembalikan null jika tidak ada film', () => {
+    const { container } = render(<HeroSection movies={[]} />);
+    expect(container.firstChild).toBeNull();
   });
 });
