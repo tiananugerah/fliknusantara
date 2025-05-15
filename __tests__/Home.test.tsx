@@ -173,7 +173,7 @@ it('memuat lebih banyak film saat scroll', async () => {
     expect(getMovies).toHaveBeenCalled();
   });
 
-  const movieList = screen.getByTestId('movie-list-sedang-tayang');
+  const movieList = screen.getAllByTestId('movie-list-sedang-tayang')[0];
     fireEvent.scroll(movieList, { target: { scrollY: 1000 } });
 
     jest.advanceTimersByTime(1000);
