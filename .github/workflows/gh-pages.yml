@@ -42,7 +42,7 @@ jobs:
     - name: Copy coverage report to dist (optional)
       run: |
         mkdir -p dist/coverage
-        cp -r coverage/lcov-report/* dist/coverage || echo "No coverage report found"
+        cp -r coverage/lcov-report/* dist/coverage
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
