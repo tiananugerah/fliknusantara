@@ -1,0 +1,128 @@
+.top-movie-carousel {
+  padding: 2rem 0;
+  margin: 0 -1rem;
+}
+
+.top-movie-carousel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.top-movie-carousel__title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: -0.025em;
+}
+
+.top-movie-carousel__nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.top-movie-carousel__nav-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s;
+}
+
+.top-movie-carousel__nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.top-movie-carousel__container {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.top-movie-carousel__content {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 1rem;
+}
+
+.top-movie-carousel__content::-webkit-scrollbar {
+  display: none;
+}
+
+.top-movie-carousel__item {
+  position: relative;
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+
+.top-movie-carousel__item:hover {
+  transform: scale(1.02);
+}
+
+.top-movie-carousel__rank {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--netflix-red);
+  color: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.top-movie-carousel__loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.top-movie-carousel__spinner {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .top-movie-carousel {
+    margin: 0 -2rem;
+  }
+
+  .top-movie-carousel__header {
+    padding: 0 2rem;
+  }
+
+  .top-movie-carousel__container {
+    padding: 0.5rem 2rem;
+  }
+
+  .top-movie-carousel__item {
+    flex: 0 0 240px;
+  }
+}

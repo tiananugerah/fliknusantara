@@ -1,0 +1,96 @@
+.top-carousel {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.top-carousel__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.top-carousel__container {
+  position: relative;
+  width: 100%;
+}
+
+.top-carousel__content {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.top-carousel__content::-webkit-scrollbar {
+  display: none;
+}
+
+.top-carousel__item {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(50% - 0.5rem);
+  transition: transform 0.3s ease;
+}
+
+.top-carousel__rank {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 30px;
+  height: 30px;
+  background: #e50914;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.top-carousel__scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.top-carousel__scroll-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.top-carousel__scroll-button--left {
+  left: 0.5rem;
+}
+
+.top-carousel__scroll-button--right {
+  right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .top-carousel__item {
+    width: calc(33.333% - 0.667rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .top-carousel__item {
+    width: calc(25% - 0.75rem);
+  }
+}
