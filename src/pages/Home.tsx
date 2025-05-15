@@ -136,7 +136,7 @@ const Home: React.FC = () => {
               title={`Hasil Pencarian: ${searchQuery}`}
               movies={movies}
               onLoadMore={() => fetchMovies()}
-              loading={loading}
+              loading={loading && !hasReachedEnd}
             />
           </div>
         )}
