@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
 
     const timeout = setTimeout(() => {
       onSearch(query);
-    }, 1000); // Mengurangi waktu delay menjadi 300ms
+    }, 100); // Mengurangi waktu delay menjadi 300ms
 
     setSearchTimeout(timeout);
   };
@@ -73,9 +73,9 @@ const Header: React.FC<HeaderProps> = ({
               {(Object.keys(CATEGORIES) as CategoryType[]).map(key => (
                 <Button
                   key={key}
-                  variant={currentCategory === key ? 'primary' : 'secondary'}
+                  variant={'secondary'}
                   onClick={() => onCategoryChange(key as CategoryType)}
-                  className={`header__category-button ${currentCategory === key ? 'header__category-button--active' : ''}`}
+                  className={`header__category-button ${currentCategory === key ? 'header__category-button--active' : 'header__category-button--inactive'}`}
                 >
                   {CATEGORIES[key]}
                 </Button>

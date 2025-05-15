@@ -119,22 +119,26 @@
   }
 
   .header__category-button--active {
-    background-color: white;
-    color: black;
+    background-color: #922929;
+    color: rgb(127, 105, 105);
     font-weight: 600;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(255, 51, 51, 0.3);
   }
 
   .header__category-button--active:hover {
     background-color: rgb(229, 231, 235);
+    box-shadow: 0 10px 15px -3px rgba(255, 51, 51, 0.3);
   }
 
   .header__category-button--inactive {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 51, 51, 0.1);
+    color: #FF3333;
+    box-shadow: 0 10px 15px -3px rgba(255, 51, 51, 0.3);
   }
 
   .header__category-button--inactive:hover {
     background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(255, 51, 51, 0.3);
   }
 }
 
@@ -158,6 +162,6 @@
 
 .header__category-button:hover {
   transform: scale(1.05);
-  background-color: red;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #FF4444;
+  color: white;
 }

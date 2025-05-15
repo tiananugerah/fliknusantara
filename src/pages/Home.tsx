@@ -55,7 +55,7 @@ const Home: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, [page, category, searchQuery, randomMovies]);
+  }, [category, searchQuery, randomMovies]);
 
   const fetchTopMovies =  useCallback(async () => {
     try {
@@ -146,7 +146,7 @@ const Home: React.FC = () => {
               title="Film Yang Mungkin Anda Suka"
               movies={randomMovies}
               onLoadMore={() => {}}
-              loading={true}
+              loading={loading}
             />
           </div>
         )}

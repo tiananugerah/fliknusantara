@@ -26,6 +26,8 @@ Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
    ```bash
    npm run dev
    ```
+## Konfigurasi .env
+Untuk menggunakan aplikasi ini, Anda perlu mengatur file `.env` dengan kunci API TMDB. Contoh file `.env` dapat ditemukan di `.env.example`. Anda harus mendapatkan kunci API dari [TMDB](https://www.themoviedb.org/documentation/api) dan memasukkannya ke dalam file `.env` sebagai `VITE_TMDB_API_KEY`.
 
 ## Penggunaan
 Setelah server pengembangan berjalan, Anda dapat mengakses aplikasi di `http://localhost:5174`. Aplikasi ini menyediakan fitur-fitur seperti pencarian film, detail film, dan daftar film populer.
@@ -50,6 +52,3 @@ Anda dapat mengakses halaman proyek ini melalui GitHub Pages di [Flik Nusantara]
 ## Badge
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
-
-## Konfigurasi .env
-Untuk menggunakan aplikasi ini, Anda perlu mengatur file `.env` dengan kunci API TMDB. Contoh file `.env` dapat ditemukan di `.env.example`. Anda harus mendapatkan kunci API dari [TMDB](https://www.themoviedb.org/documentation/api) dan memasukkannya ke dalam file `.env` sebagai `VITE_TMDB_API_KEY`.
