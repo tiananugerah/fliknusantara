@@ -55,7 +55,11 @@ const Home: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, [category, searchQuery, randomMovies]);
+    console.log(page, 'page')
+    console.log(category, 'category')
+    console.log(searchQuery, 'searchQuery')
+    console.log(randomMovies, 'randomMovies')
+  }, [page, category, searchQuery, randomMovies]);
 
   const fetchTopMovies =  useCallback(async () => {
     try {
@@ -136,7 +140,7 @@ const Home: React.FC = () => {
               title={`Hasil Pencarian: ${searchQuery}`}
               movies={movies}
               onLoadMore={() => fetchMovies()}
-              loading={loading}
+              loading={loading && randomMovies.length === 0}
             />
           </div>
         )}
