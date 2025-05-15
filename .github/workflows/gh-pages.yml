@@ -22,7 +22,7 @@ jobs:
       run: |
         echo "VITE_TMDB_API_KEY=${{ secrets.MY_SECRET_TOKEN }}" > .env
 
-    - name: Clean previous build artifacts
+    - name: Clean workspace
       run: |
         rm -rf dist node_modules coverage
 
@@ -39,7 +39,7 @@ jobs:
     - name: Build the project
       run: npm run build
 
-    - name: Copy coverage report to dist
+    - name: Copy coverage report to dist (optional)
       run: |
         mkdir -p dist/coverage
         cp -r coverage/lcov-report/* dist/coverage || echo "No coverage report found"
@@ -49,3 +49,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
+        # Pastikan deploy tidak mempertahankan file lama
+        force_orphan: true
