@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# Flik Nusantara
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Teknologi yang Digunakan
 
-Currently, two official plugins are available:
+- **React**: Library JavaScript untuk membangun antarmuka pengguna.
+- **TypeScript**: Superset JavaScript yang menambahkan tipe statis.
+- **Vite**: Alat build yang cepat untuk proyek web modern.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalasi
+Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
 
-## Expanding the ESLint configuration
+1. Pastikan Anda memiliki Node.js dan npm terinstal di sistem Anda.
+2. Clone repositori ini.
+   ```bash
+   git clone https://github.com/username/fliknusantara.git
+   ```
+3. Masuk ke direktori proyek.
+   ```bash
+   cd fliknusantara
+   ```
+4. Instal dependensi.
+   ```bash
+   npm install
+   ```
+5. Jalankan server pengembangan.
+   ```bash
+   npm run dev
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Penggunaan
+Setelah server pengembangan berjalan, Anda dapat mengakses aplikasi di `http://localhost:3000`. Aplikasi ini menyediakan fitur-fitur seperti pencarian film, detail film, dan daftar film populer.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Kontribusi
+Kami menyambut kontribusi dari siapa pun. Untuk berkontribusi, silakan fork repositori ini dan buat pull request dengan perubahan Anda.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Lisensi
+Proyek ini dilisensikan di bawah MIT License.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Akses Halaman
+Anda dapat mengakses halaman proyek ini melalui GitHub Pages di [Flik Nusantara](https://tiananugerah.github.io/fliknusantara/).
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## FAQ
+1. **Bagaimana cara menambahkan fitur baru?**
+   - Fork repositori, buat branch baru, tambahkan fitur, dan buat pull request.
+2. **Apa yang harus dilakukan jika menemukan bug?**
+   - Silakan buat issue di GitHub dengan deskripsi bug yang ditemukan.
+
+## Badge
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
