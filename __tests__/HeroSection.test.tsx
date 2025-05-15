@@ -1,6 +1,7 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import HeroSection from '../src/components/organisms/HeroSection';
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 const mockMovies = [
   {
@@ -23,6 +24,14 @@ const mockMovies = [
   }
 ];
 
+const renderHeroSection = (movies) => {
+  return render(
+    <BrowserRouter>
+      <HeroSection movies={movies} />
+    </BrowserRouter>
+  );
+};
+
 describe('HeroSection Component', () => {
   beforeEach(() => {
     jest.useFakeTimers();
@@ -33,7 +42,7 @@ describe('HeroSection Component', () => {
   });
 
   it('merender film pertama sebagai slide aktif', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     expect(screen.getByText('Film 1')).toBeInTheDocument();
     expect(screen.getByText('Deskripsi film 1')).toBeInTheDocument();
     expect(screen.getByAltText('Film 1')).toHaveAttribute(
@@ -43,7 +52,7 @@ describe('HeroSection Component', () => {
   });
 
   it('mengganti slide secara otomatis setelah interval waktu', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     act(() => {
       jest.advanceTimersByTime(5000); // Menunggu 5 detik
     });
@@ -51,25 +60,25 @@ describe('HeroSection Component', () => {
   });
 
   it('mengganti slide ketika indikator diklik', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     const indicators = screen.getAllByRole('button');
     fireEvent.click(indicators[1]); // Klik indikator kedua
     expect(screen.getByText('Film 2')).toBeInTheDocument();
   });
 
   it('menampilkan tombol info selengkapnya', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     const buttons = screen.getAllByText('Info Selengkapnya');
     expect(buttons.length).toBeGreaterThan(0);
   });
 
   it('menangani kasus ketika tidak ada film', () => {
-    render(<HeroSection movies={[]} />);
+    renderHeroSection([]);
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
   });
 
   it('menampilkan slide berikutnya saat tombol next diklik', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     const nextButton = screen.getByLabelText('Slide berikutnya');
     fireEvent.click(nextButton);
     expect(screen.getByText('Film 2')).toBeInTheDocument();
@@ -77,7 +86,7 @@ describe('HeroSection Component', () => {
   });
 
   it('menampilkan slide sebelumnya saat tombol previous diklik', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     const prevButton = screen.getByLabelText('Slide sebelumnya');
     fireEvent.click(prevButton);
     expect(screen.getByText('Film 2')).toBeInTheDocument();
@@ -85,7 +94,7 @@ describe('HeroSection Component', () => {
   });
 
   it('menavigasi slide menggunakan keyboard', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     fireEvent.keyDown(window, { key: 'ArrowRight' });
     expect(screen.getByText('Film 2')).toBeInTheDocument();
     fireEvent.keyDown(window, { key: 'ArrowLeft' });
@@ -93,7 +102,7 @@ describe('HeroSection Component', () => {
   });
 
   it('mengubah slide secara otomatis setelah interval waktu', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     expect(screen.getByText('Film 1')).toBeInTheDocument();
     act(() => {
       jest.advanceTimersByTime(5000);
@@ -102,7 +111,7 @@ describe('HeroSection Component', () => {
   });
 
   it('menampilkan indikator dot untuk setiap slide', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     const indicators = screen.getAllByRole('button', { name: /Pergi ke slide/ });
     expect(indicators).toHaveLength(mockMovies.length);
     fireEvent.click(indicators[1]);
@@ -110,14 +119,14 @@ describe('HeroSection Component', () => {
   });
 
   it('menavigasi ke halaman detail film saat tombol info diklik', () => {
-    render(<HeroSection movies={mockMovies} />);
+    renderHeroSection(mockMovies);
     const infoButtons = screen.getAllByText('Info Selengkapnya');
     fireEvent.click(infoButtons[0]);
     window.location.href = '/movie/1';
   });
 
   it('mengembalikan null jika tidak ada film', () => {
-    const { container } = render(<HeroSection movies={[]} />);
+    const { container } = renderHeroSection([]);
     expect(container.firstChild).toBeNull();
   });
 });
