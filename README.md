@@ -28,7 +28,9 @@ Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
    ```
 
 ## Penggunaan
-Setelah server pengembangan berjalan, Anda dapat mengakses aplikasi di `http://localhost:3000`. Aplikasi ini menyediakan fitur-fitur seperti pencarian film, detail film, dan daftar film populer.
+Setelah server pengembangan berjalan, Anda dapat mengakses aplikasi di `http://localhost:5174`. Aplikasi ini menyediakan fitur-fitur seperti pencarian film, detail film, dan daftar film populer.
+
+Untuk melihat hasil unit test, klik tautan berikut: [Hasil Unit Test](https://tiananugerah.github.io/fliknusantara/coverage/)
 
 ## Kontribusi
 Kami menyambut kontribusi dari siapa pun. Untuk berkontribusi, silakan fork repositori ini dan buat pull request dengan perubahan Anda.
